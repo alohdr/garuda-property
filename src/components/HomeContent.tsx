@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import styles from "../app/page.module.css";
 import Navbar from "./Navbar";
@@ -7,6 +8,19 @@ import { useLanguage } from "../context/LanguageContext";
 
 export default function HomeContent() {
   const { t } = useLanguage();
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft -= 400;
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft += 400;
+    }
+  };
 
   return (
     <main className={styles.main}>
@@ -55,35 +69,54 @@ export default function HomeContent() {
             <h2 className={styles.sectionTitle}>{t.properties.title}</h2>
             <p className={styles.sectionDesc}>{t.properties.desc}</p>
           </div>
-          <div className={styles.grid}>
-            {[
-              { price: t.properties.callPrice, img: "1500382017468-9049fed747ef", size: "150" },
-              { price: `${t.properties.price} 250.000.000`, img: "1513836279014-a89f7a760af3", size: "200" },
-              { price: `${t.properties.price} 350.000.000`, img: "1504307651254-35680f356dfd", size: "300" }
-            ].map((item, idx) => (
-              <div key={idx} className={styles.card}>
-                <div style={{ position: 'relative', height: '300px' }}>
-                  <Image 
-                    src={`https://images.unsplash.com/photo-${item.img}?q=80&w=800&auto=format&fit=crop`}
-                    alt={t.properties.items[idx].title}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
-                  <div style={{ position: 'absolute', top: 20, right: 20, background: 'var(--primary)', color: '#000', padding: '0.5rem 1rem', fontSize: '0.8rem', fontWeight: 'bold' }}>
-                    {t.properties.available}
+          
+          <div className={styles.carouselWrapper}>
+            <div className={styles.carouselControls}>
+               <button onClick={scrollLeft} className={styles.carouselBtn} aria-label="Previous">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                 </svg>
+               </button>
+               <button onClick={scrollRight} className={styles.carouselBtn} aria-label="Next">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                 </svg>
+               </button>
+            </div>
+            
+            <div className={styles.carousel} ref={scrollRef}>
+              {[
+                { price: t.properties.callPrice, img: "1500382017468-9049fed747ef", size: "150" },
+                { price: `${t.properties.price} 250.000.000`, img: "1513836279014-a89f7a760af3", size: "200" },
+                { price: `${t.properties.price} 350.000.000`, img: "1504307651254-35680f356dfd", size: "300" },
+                // Duplicate for demo scroll
+                { price: t.properties.callPrice, img: "1500382017468-9049fed747ef", size: "150" },
+                { price: `${t.properties.price} 250.000.000`, img: "1513836279014-a89f7a760af3", size: "200" },
+              ].map((item, idx) => (
+                <div key={idx} className={styles.card}>
+                  <div style={{ position: 'relative', height: '300px' }}>
+                    <Image 
+                      src={`https://images.unsplash.com/photo-${item.img}?q=80&w=800&auto=format&fit=crop`}
+                      alt={t.properties.items[idx % 3].title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                    <div style={{ position: 'absolute', top: 20, right: 20, background: 'var(--primary)', color: '#000', padding: '0.5rem 1rem', fontSize: '0.8rem', fontWeight: 'bold' }}>
+                      {t.properties.available}
+                    </div>
+                  </div>
+                  <div className={styles.cardContent}>
+                    <h3 className={styles.cardTitle}>{t.properties.items[idx % 3].title}</h3>
+                    <span className={styles.cardPrice}>{item.price}</span>
+                    <ul className={styles.featureList}>
+                      <li>✓ {t.properties.features.area}: {item.size} m²</li>
+                      <li>✓ {t.properties.features.zone}</li>
+                      <li>✓ {t.properties.features.access}</li>
+                    </ul>
                   </div>
                 </div>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{t.properties.items[idx].title}</h3>
-                  <span className={styles.cardPrice}>{item.price}</span>
-                  <ul className={styles.featureList}>
-                    <li>✓ {t.properties.features.area}: {item.size} m²</li>
-                    <li>✓ {t.properties.features.zone}</li>
-                    <li>✓ {t.properties.features.access}</li>
-                  </ul>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

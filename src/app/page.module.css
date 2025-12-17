@@ -238,6 +238,76 @@
   text-align: center;
 }
 
+
+/* Carousel */
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carouselControls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.carouselBtn {
+  pointer-events: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5); /* Darker semi-transparent background for contrast over images */
+  backdrop-filter: blur(4px);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carouselBtn:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.carouselBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  padding: 1rem; /* Add padding for hover effect not to be cut off */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Ensure cards in carousel have fixed width */
+.carousel .card {
+  min-width: 350px;
+  flex: 0 0 auto;
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
