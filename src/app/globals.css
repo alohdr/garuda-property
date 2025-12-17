@@ -1,27 +1,14 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background: #080808;
+  --foreground: #f0f0f0;
+  --primary: #d4af37; /* Metallic Gold */
+  --primary-light: #f4df90;
+  --primary-dark: #aa8c2c;
+  --primary-glow: rgba(212, 175, 55, 0.2);
+  --secondary: #121212;
+  --card-bg: #101010;
+  --border: #2a2a2a;
+  --emerald: #1b4d3e; /* Deep Emerald for Land/Nature context */
 }
 
 * {
@@ -30,13 +17,47 @@ body {
   margin: 0;
 }
 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), serif;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
