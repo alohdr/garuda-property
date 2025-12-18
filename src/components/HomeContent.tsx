@@ -89,8 +89,8 @@ export default function HomeContent() {
                 { price: t.properties.callPrice, img: "/images/properties/prop-1.jpg", size: "150", title: t.properties.items[0].title },
                 { price: `${t.properties.price} 250.000.000`, img: "/images/properties/prop-2.jpg", size: "200", title: t.properties.items[1].title },
                 { price: `${t.properties.price} 350.000.000`, img: "/images/properties/prop-3.jpg", size: "300", title: t.properties.items[2].title },
-                { price: `${t.properties.price} 450.000.000`, img: "/images/properties/prop-4.jpg", size: "180", title: "Bukit Golf View" },
-                { price: `${t.properties.price} 500.000.000`, img: "/images/properties/prop-5.jpg", size: "400", title: "Lembah Pinus" },
+                { price: `${t.properties.price} 450.000.000`, img: "/images/properties/prop-4.jpg", size: "180", title: "Prambanan Asri 2" },
+                { price: `${t.properties.price} 500.000.000`, img: "/images/properties/prop-5.jpg", size: "400", title: "Savana Sidoarum" },
               ].map((item, idx) => (
                 <div key={idx} className={styles.card}>
                   <div style={{ position: 'relative', height: '300px' }}>

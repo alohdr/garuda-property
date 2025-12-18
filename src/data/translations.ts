@@ -43,9 +43,9 @@ export const translations = {
         access: "Akses Jalan Lebar 6 Meter"
       },
       items: [
-        { title: "Klaster Taman Zamrud" },
-        { title: "Dataran Tinggi Royal" },
-        { title: "Tepi Danau Serenity" }
+        { title: "Green Palagan 3" },
+        { title: "Kalasan Asri" },
+        { title: "Pandanaran 1" }
       ]
     },
     agent: {
