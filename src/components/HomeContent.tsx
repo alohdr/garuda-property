@@ -154,7 +154,7 @@ export default function HomeContent() {
                <p className={styles.agentBio}>
                 {t.agent.bio}
               </p>
-              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className={styles.contactButton}>
+              <a href="https://wa.me/6285962906376" target="_blank" rel="noopener noreferrer" className={styles.contactButton}>
                 <span>{t.agent.cta}</span>
               </a>
             </div>
