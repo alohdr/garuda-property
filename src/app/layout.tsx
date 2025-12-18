@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Garuda Nusantara Property | Tanah Kavling Eksklusif",
+  title: "Garuda Sukses Raya Property | Tanah Kavling Eksklusif",
   description:
     "Investasi aset abadi. Tanah kavling premium dengan lokasi strategis dan legalitas terjamin. Hubungi Abi untuk konsultasi privat.",
 };

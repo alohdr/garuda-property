@@ -21,7 +21,7 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <div className={styles.logo}>GARUDA NUSANTARA</div>
+          <div className={styles.logo}>Garuda Sukses Raya</div>
         </div>
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>

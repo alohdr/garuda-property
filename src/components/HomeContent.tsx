@@ -164,7 +164,7 @@ export default function HomeContent() {
 
       <footer className={styles.footer}>
         <div className={styles.container}>
-          <div className={styles.logo} style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>GARUDA NUSANTARA</div>
+          <div className={styles.logo} style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>GARUDA SUKSES RAYA</div>
           <p style={{ opacity: 0.6 }}>&copy; {new Date().getFullYear()} {t.footer.rights}</p>
         </div>
       </footer>

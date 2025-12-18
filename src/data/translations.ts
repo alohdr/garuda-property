@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       title1: "Mahakarya",
-      title2: "Tanah Warisan",
+      title2: "Tanah Jogja",
       subtitle: "Hakikat kemewahan bukan hanya tentang bangunan, tetapi tentang tanah tempat Anda berpijak. Investasi aset legasi di lokasi paling prestisius Yogyakarta.",
       cta: "Jadwalkan Kunjungan Privat"
     },
@@ -55,7 +55,7 @@ export const translations = {
       cta: "Hubungi via WhatsApp"
     },
     footer: {
-      rights: "Garuda Nusantara Property. Seni Investasi Tanah."
+      rights: "Garuda Sukses Raya Property. Seni Investasi Tanah."
     }
   },
   en: {
@@ -114,7 +114,7 @@ export const translations = {
       cta: "Contact via WhatsApp"
     },
     footer: {
-      rights: "Garuda Nusantara Property. The Art of Land Investment."
+      rights: "Garuda Sukses Raya Property. The Art of Land Investment."
     }
   }
 };
