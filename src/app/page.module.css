@@ -46,6 +46,8 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
+  padding-bottom: 0.2em; /* Prevent descender clipping */
+  margin-bottom: -0.2em; /* Compensate layout shift */
 }
 
 .subtitle {

@@ -86,27 +86,28 @@ export default function HomeContent() {
             
             <div className={styles.carousel} ref={scrollRef}>
               {[
-                { price: t.properties.callPrice, img: "1500382017468-9049fed747ef", size: "150" },
-                { price: `${t.properties.price} 250.000.000`, img: "1513836279014-a89f7a760af3", size: "200" },
-                { price: `${t.properties.price} 350.000.000`, img: "1504307651254-35680f356dfd", size: "300" },
-                // Duplicate for demo scroll
-                { price: t.properties.callPrice, img: "1500382017468-9049fed747ef", size: "150" },
-                { price: `${t.properties.price} 250.000.000`, img: "1513836279014-a89f7a760af3", size: "200" },
+                { price: t.properties.callPrice, img: "/images/properties/prop-1.jpg", size: "150", title: t.properties.items[0].title },
+                { price: `${t.properties.price} 250.000.000`, img: "/images/properties/prop-2.jpg", size: "200", title: t.properties.items[1].title },
+                { price: `${t.properties.price} 350.000.000`, img: "/images/properties/prop-3.jpg", size: "300", title: t.properties.items[2].title },
+                { price: `${t.properties.price} 450.000.000`, img: "/images/properties/prop-4.jpg", size: "180", title: "Bukit Golf View" },
+                { price: `${t.properties.price} 500.000.000`, img: "/images/properties/prop-5.jpg", size: "400", title: "Lembah Pinus" },
               ].map((item, idx) => (
                 <div key={idx} className={styles.card}>
                   <div style={{ position: 'relative', height: '300px' }}>
                     <Image 
-                      src={`https://images.unsplash.com/photo-${item.img}?q=80&w=800&auto=format&fit=crop`}
-                      alt={t.properties.items[idx % 3].title}
+                      src={item.img}
+                      alt={item.title}
                       fill
                       style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    <div style={{ position: 'absolute', top: 20, right: 20, background: 'var(--primary)', color: '#000', padding: '0.5rem 1rem', fontSize: '0.8rem', fontWeight: 'bold' }}>
+                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)' }} />
+                    <div style={{ position: 'absolute', top: 20, right: 20, background: 'var(--primary)', color: '#000', padding: '0.5rem 1rem', fontSize: '0.8rem', fontWeight: 'bold', zIndex: 2 }}>
                       {t.properties.available}
                     </div>
                   </div>
                   <div className={styles.cardContent}>
-                    <h3 className={styles.cardTitle}>{t.properties.items[idx % 3].title}</h3>
+                    <h3 className={styles.cardTitle}>{item.title}</h3>
                     <span className={styles.cardPrice}>{item.price}</span>
                     <ul className={styles.featureList}>
                       <li>✓ {t.properties.features.area}: {item.size} m²</li>
@@ -127,7 +128,7 @@ export default function HomeContent() {
           <div className={styles.agentCard}>
             <div style={{ position: 'relative' }}>
                <Image 
-                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                 src="/images/abi-consultant.jpg"
                  alt="Abi Sales Executive"
                  width={350}
                  height={450}
